@@ -7,55 +7,55 @@
 //     console.log(Object.values(o))
 //     console.log(isEmptyObject(o))
 
-//object 
-// const student={
-//     id: 645000123,
-//     profile: {
-//     fullname:{
-//         firstname:'Suda',
-//         lastname: 'DeeJai'
-//     }
-//     }
-//     ,
-//     getFullName(){
-//         return `${this.fullname.firstname} ${this.fullname.lastname}` 
-//     }
-// }
-// const {profile:{fullname:{firstname,lastname}}}=student
-// console.log(firstname)
-// console.log(lastname)
-
-//array
-const students=[{
-    id:645000123, 
-    profile:{
-        fullname:{
-         firstname:'Suda', 
-         lastname:'DeeJai'
-        }
-    },
-    getFullName(){
-        return `${this.profile.fullname.firstname},  ${this.profile.fullname.lastname}`
+// object 
+const student={
+    id: 645000123,
+    profile: {
+    fullname:{
+        firstname:'Suda',
+        lastname: 'DeeJai'
     }
-},
-{
-    id:555, 
-    profile:{
-        fullname:{
-         firstname:'Somchai', 
-         lastname:'SeeJai'
-        }
-    },
-    getFullName(){
-        return `${this.profile.fullname.firstname},  ${this.profile.fullname.lastname}`
     }
-}]
-console.log(students.id);
-students.forEach(x=> console.log(x.id))
-
-const [,{profile:{fullname:{firstname, lastname}}}]=students
+    ,
+    getFullName(){
+        return `${this.fullname.firstname} ${this.fullname.lastname}` 
+    }
+}
+const {profile:{fullname:{firstname,lastname}}}=student
 console.log(firstname)
 console.log(lastname)
+
+// //array
+// const students=[{
+//     id:645000123, 
+//     profile:{
+//         fullname:{
+//          firstname:'Suda', 
+//          lastname:'DeeJai'
+//         }
+//     },
+//     getFullName(){
+//         return `${this.profile.fullname.firstname},  ${this.profile.fullname.lastname}`
+//     }
+// },
+// {
+//     id:555, 
+//     profile:{
+//         fullname:{
+//          firstname:'Somchai', 
+//          lastname:'SeeJai'
+//         }
+//     },
+//     getFullName(){
+//         return `${this.profile.fullname.firstname},  ${this.profile.fullname.lastname}`
+//     }
+// }]
+// console.log(students.id);
+// students.forEach(x=> console.log(x.id))
+
+// const [,{profile:{fullname:{firstname, lastname}}}]=students
+// console.log(firstname)
+// console.log(lastname)
 
 
 
@@ -95,4 +95,4 @@ console.log(lastname)
 // const newStudent = {...student, id:1}
 // console.log(newStudent.getFullName())
 
-// // less operator (...)
+// // rest operator (...)

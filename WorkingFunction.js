@@ -80,23 +80,24 @@
 
 //closure
 
-// function outer(x){
-//     let n=1
-//     function inner1(y){
-//         n = n+5
-//         return x+n+y
-//     }
-//     function inner2(z){
-//         return x+n+z
-//     }
-//     return {inner1, inner2}//{inner1:inner1, inner2: inner2} -> key กับ value ตรงกัน
+function outer(x){
+    let n=1
+    function inner1(y){
+        n = n+5
+        return x+n+y
+    }
+    function inner2(z){
+        return x+n+z
+    }
+//     return {inner1, inner2}//{inner1:inner1, inner2: inner2}, [inner1, innner2] -> key กับ value ตรงกัน
+    return [inner1, inner2]
 
-// }
+}
 
 // //object destructuring
-// const {inner1, inner2} = outer(10) 
-// console.log(inner1(20))
-// console.log(inner2(30))
+const [inner1, inner2] = outer(10) 
+console.log(inner1(20))
+console.log(inner2(30))
 
 // // const o = outer(10) // -> o เก็บ object
 
@@ -123,10 +124,10 @@
 // console.log(doSomething(10,20,30,40))
 
 //rest Parameters
-function sum(num1, num2, num3){
-    return num1 + num2 + num3
+// function sum(num1, num2, num3){
+//     return num1 + num2 + num3
 
-}
+// }
 
-let nums = [5,20]
-console.log(sum(...nums))
+// let nums = [5,20]
+// console.log(sum(...nums))

@@ -1,9 +1,9 @@
 // Object in js is prototype based not class based
 //1. object literals
-// let address = {houseNo: 126, province:'Bangkok'}
-// //let address = new Object()
-// console.log(address)
-// console.log(Object.prototype.isPrototypeOf(address)); // prototype metafor = template of class
+let address = {houseNo: 126, province:'Bangkok'}
+//let address = new Object()
+console.log(address)
+console.log(Object.prototype.isPrototypeOf(address)); // prototype metafor = template of class
 
 //2. new operator
 // class Square{
@@ -110,24 +110,24 @@
 // const bookValues = Object.values(book)
 // console.log(bookValues)
 
-class Subject {
-    constructor(title = 'untitle'){
-        this.title = title
-    }
-    getTitle(){
-        return this.title
-    }
-}
+// class Subject {
+//     constructor(title = 'untitle'){
+//         this.title = title
+//     }
+//     getTitle(){
+//         return this.title
+//     }
+// }
 
-let subject = new Subject('Client Side I')
-//inherit parent property (title)
-let lectureSubject = Object.create(subject)
-lectureSubject.lectureHours=2
+// let subject = new Subject('Client Side I')
+// //inherit parent property (title)
+// let lectureSubject = Object.create(subject)
+// lectureSubject.lectureHours=2
 
-console.log(lectureSubject)
-console.log(lectureSubject.title)
-console.log(lectureSubject.getTitle())
+// console.log(lectureSubject)
+// console.log(lectureSubject.title)
+// console.log(lectureSubject.getTitle())
 
-//prototype chaining
-console.log(Object.prototype.isPrototypeOf(lectureSubject))
-console.log(Object.prototype.isPrototypeOf(lectureSubject))
+// //prototype chaining
+// console.log(Object.prototype.isPrototypeOf(lectureSubject))
+// console.log(Object.prototype.isPrototypeOf(lectureSubject))
