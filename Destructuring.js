@@ -1,29 +1,39 @@
-// function isEmptyObject( obj){
-//     // return JSON.stringify(obj)==='{}'    
-//     return Object.keys(obj).length===0
+// function isEmptyObject(obj){
+//     return JSON.stringify(obj)==='{}'    
+//     // return Object.keys(obj).length===0
 // }
 //     const o={}
 //     console.log(Object.keys(o))
 //     console.log(Object.values(o))
 //     console.log(isEmptyObject(o))
 
+// const myJSON = '{"name":"John", "age":30, "car":null}';
+// const myObj = JSON.parse(myJSON); // JSON -> js
+
+// console.log(JSON.parse(myJSON))
+
 // object 
-const student={
-    id: 645000123,
-    profile: {
-    fullname:{
-        firstname:'Suda',
-        lastname: 'DeeJai'
-    }
-    }
-    ,
-    getFullName(){
-        return `${this.fullname.firstname} ${this.fullname.lastname}` 
-    }
-}
-const {profile:{fullname:{firstname,lastname}}}=student
-console.log(firstname)
-console.log(lastname)
+// const student={
+//     id: 645000123,
+//     profile: {
+//     fullname:{
+//         firstname:'Suda',
+//         lastname: 'DeeJai'
+//     }
+//     }
+//     ,
+//     getFullName(){
+//         return `${this.fullname.firstname} ${this.fullname.lastname}` 
+//     }
+// }
+// const {id,profile:{fullname:{firstname,lastname}}}=student
+// console.log(id);
+// console.log(firstname)
+// console.log(lastname)
+
+// const {id , ...studentDetail} = student
+// console.log(id)
+// console.log(studentDetail)
 
 // //array
 // const students=[{
@@ -68,9 +78,7 @@ console.log(lastname)
 
 
 
-// const {id , ...studentDetail} = student
-// console.log(id)
-// console.log(studentDetail)
+
 
 // const address = {
 //     houseNo: 126,
