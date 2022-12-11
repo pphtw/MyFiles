@@ -1,10 +1,10 @@
-// const todoUserInterface = require('./UI/todoList')
-// const todoManagement = require('./lib/todoManagement')
-// const {addTodoHandler, notDoneButtonHandler, removeButtonHandler} = require ('./eventHandler/eventController.js');
+const todoUserInterface = require('./UI/todoList')
+const todoManagement = require('./lib/todoManagement')
+const {addTodoHandler, notDoneButtonHandler, removeButtonHandler} = require ('./eventHandler/eventController.js');
 
-import {addTodoHandler, notDoneButtonHandler, removeButtonHandler} from './eventHandler/eventController.js'
-import {todoUserInterface} from './UI/todoList.js'
-import {todoManagement} from './lib/todoManagement.js'
+// import {addTodoHandler, notDoneButtonHandler, removeButtonHandler} from './eventHandler/eventController.js'
+// import {todoUserInterface} from './UI/todoList.js'
+// import {todoManagement} from './lib/todoManagement.js'
 
 const {
     addTodo,
