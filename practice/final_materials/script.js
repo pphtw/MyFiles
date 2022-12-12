@@ -4,7 +4,7 @@ import { eventHandler} from "./events/eventHandler.js";
 
 const {addProduct, getProductList, clearProduct, getNumberOfPending, getNumberOfDone} = productManagement();
 const {showBuyingList, showNumberOfDone, showNumberOfPending , clearBuyingList} = buyingList();
-const {addProductHandler, clearProductHandler} = eventHandler();
+const {addProductHandler, clearProductHandler, beforeUnloadHandler, loadHandler} = eventHandler();
 
 // let a = addProduct('Banana', '1');
 // let b = addProduct('Apple', '2');
@@ -18,6 +18,9 @@ const {addProductHandler, clearProductHandler} = eventHandler();
 // showBuyingList(a, getProductList().find(e => e.id === a).item, getProductList().find(e => e.id === a).amount, getProductList().find(e => e.id === a).status)
 // showNumberOfDone(getNumberOfDone())
 // showNumberOfPending(getNumberOfPending())
+
+window.addEventListener('beforeunload', beforeUnloadHandler)
+window.addEventListener('load', loadHandler)
 
 const submitBtn = document.querySelector('form').querySelector('button')
 // console.log(submitBtn);

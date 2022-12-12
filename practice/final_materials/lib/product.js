@@ -1,5 +1,10 @@
 class Product {
     static runningId = 1
+
+    static setRunningId (id){
+        this.runningId = id
+    }
+
     constructor(item, amount){
         this.id = Product.runningId++
         this.item = item
@@ -7,16 +12,16 @@ class Product {
         this.status = false
     }
 
-    getItem(){
+    getItem() {
         return this.item
     }
 
-    getAmount(){
+    getAmount() {
         return this.amount
     }
 
-    setDone(){
-        return this.status = true
+    setDone() {
+        this.status = true
     }
 }
 

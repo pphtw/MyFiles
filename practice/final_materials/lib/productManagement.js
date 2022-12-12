@@ -1,5 +1,6 @@
 import { Product } from "./product.js";
 
+
 function productManagement(){
     let productList = [];
     function addProduct(item, amount){
@@ -25,10 +26,16 @@ function productManagement(){
     }
 
     function setDoneItem(itemId){
-        return productList.find(e => e.id === Number(itemId)).setDone()
+        // productList.find(({id}) => id === Number(itemId)).status = true
+        productList.find(({id}) => id === Number(itemId)).setDone()
     }
 
-    return {addProduct, getProductList, clearProduct, getNumberOfPending, getNumberOfDone, setDoneItem}
+    function loadProducts(userProduct){
+        productList = userProduct
+        Product.setRunningId(userProduct[userProduct.length - 1].id + 1)
+    }
+
+    return {addProduct, getProductList, clearProduct, getNumberOfPending, getNumberOfDone, setDoneItem, loadProducts}
 }
 
 export {productManagement}

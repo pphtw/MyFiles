@@ -1,6 +1,6 @@
 import { productManagement } from "../lib/productManagement.js";
 import { buyingList } from "../UI/buyingList.js";
-const {addProduct, getProductList, clearProduct, getNumberOfPending, getNumberOfDone, setDoneItem} = productManagement();
+const {addProduct, getProductList, clearProduct, getNumberOfPending, getNumberOfDone, setDoneItem, loadProducts} = productManagement();
 const {showBuyingList, showNumberOfDone, showNumberOfPending , clearBuyingList} = buyingList();
 
 function eventHandler (){
@@ -35,7 +35,7 @@ function eventHandler (){
     function doneBtnHandler (event) {
         const targetSetDone = event.target;
         setDoneHandler(targetSetDone);
-        setDoneItem(event.target.parentNode.id)
+        setDoneItem(targetSetDone.parentElement.id)
 
         showNumberOfDone(getNumberOfDone());
         showNumberOfPending(getNumberOfPending());
@@ -55,7 +55,31 @@ function eventHandler (){
         showNumberOfPending(getNumberOfPending());
     }
 
-    return {addProductHandler, clearProductHandler}
+    function beforeUnloadHandler (event){
+        event.preventDefault()
+        localStorage.setItem('productList', JSON.stringify(getProductList()))
+    }
+
+    function loadHandler(){
+        const myProductList = localStorage.getItem('productList')
+        console.log(myProductList);
+        if(myProductList.length !== 0){
+            loadProducts(JSON.parse(myProductList))
+            getProductList().forEach(e => {
+                showBuyingList(e.id, e.item, e.amount)
+                addBtnHandler(e.id)
+                if(e.status === true){
+                    const img = document.getElementById(e.id).querySelector('img')
+                    setDoneHandler(img)
+                }
+            })
+
+            showNumberOfDone(getNumberOfDone())
+            showNumberOfPending(getNumberOfPending())
+        }
+    }
+
+    return {addProductHandler, clearProductHandler, beforeUnloadHandler, loadHandler}
 }
 
 export {eventHandler}
