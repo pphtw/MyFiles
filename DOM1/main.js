@@ -60,3 +60,10 @@ console.log(targetDiv.previousElementSibling);
 console.log(targetDiv.nextElementSibling);
 console.log(targetDiv.parentElement);
 console.log(targetDiv.children);
+
+const sectionDiv = document.getElementById('sections')
+const sectionsbySelectorAll = document.querySelectorAll('.section') 
+const sectionsByClassName = document.getElementsByClassName('section')
+console.log(sectionDiv);
+console.log(sectionsbySelectorAll);
+console.log(sectionsByClassName);
